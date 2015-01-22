@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20150121132103) do
 
   create_table "player_positions", force: true do |t|
     t.integer  "player_id"
-    t.decimal  "latitude",   precision: 15, scale: 10
-    t.decimal  "longitude",  precision: 15, scale: 10
+    t.decimal  "latitude",   precision: 15, scale: 10, default: 0.0
+    t.decimal  "longitude",  precision: 15, scale: 10, default: 0.0
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20150121132103) do
   end
 
   create_table "treasure_positions", force: true do |t|
-    t.decimal  "latitude",   precision: 15, scale: 10
-    t.decimal  "longitude",  precision: 15, scale: 10
+    t.decimal  "latitude",   precision: 15, scale: 10, default: 0.0
+    t.decimal  "longitude",  precision: 15, scale: 10, default: 0.0
     t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
