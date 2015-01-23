@@ -1,6 +1,6 @@
 class PlayerHistoryPositionsController < ApplicationController
-  def index
 
+  def index
     @players_position = PlayerPosition.all
     @hash = Gmaps4rails.build_markers(@players_position) do |player_position, marker|
       marker.lat player_position.latitude

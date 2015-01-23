@@ -9,7 +9,7 @@ class PlayerCurrentPositionsController < ApplicationController
     distance = DistanceCounterService.count_distance(@current_location ,treasure_location).to_i
 
     if distance.between?(0, WIN_DISTANCE)
-      PlayerMailer.treasure_notice(@email).deliver
+      PlayerMailer.treasure_notice(@email, treasure_location).deliver
 
     elsif distance > WIN_DISTANCE
       msg = { :status => 'ok', :distance => distance }
